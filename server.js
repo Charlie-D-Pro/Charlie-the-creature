@@ -3,22 +3,26 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://pou-game.vercel.app",
+  })
+); // Autorise le frontend Vercel à accéder au backend Render
 app.use(bodyParser.json());
 
-// Stockage en mémoire (remplace par une base de données si besoin)
+// Stockage en mémoire (à remplacer par une base de données)
 let pet = {
   hunger: 100,
   energy: 100,
   cleanliness: 100,
 };
 
-// **Endpoint pour récupérer l'état actuel du pet**
+// Récupérer l'état actuel du pet
 app.get("/pet", (req, res) => {
   res.json(pet);
 });
 
-// **Endpoint pour ajouter +10 aux jauges quand un bouton est cliqué**
+// Modifier les jauges du pet
 app.post("/pet", (req, res) => {
   const { action } = req.body;
   if (action === "feed") pet.hunger = Math.min(pet.hunger + 10, 100);
@@ -27,7 +31,7 @@ app.post("/pet", (req, res) => {
   res.json(pet);
 });
 
-// **Endpoint pour diminuer les jauges automatiquement toutes les 5 secondes**
+// Diminution automatique des jauges
 app.post("/pet/update", (req, res) => {
   pet.hunger = Math.max(pet.hunger - 5, 0);
   pet.energy = Math.max(pet.energy - 5, 0);
@@ -35,7 +39,6 @@ app.post("/pet/update", (req, res) => {
   res.json(pet);
 });
 
-// **Lancement du serveur**
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Serveur backend démarré sur http://localhost:${PORT}`);
