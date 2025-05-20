@@ -5,7 +5,9 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(
   cors({
-    origin: "https://pou-game.vercel.app",
+    origin: "*", // Autorise toutes les requêtes, ou remplacer par "https://pou-game.vercel.app"
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
   })
 ); // Autorise le frontend Vercel à accéder au backend Render
 app.use(bodyParser.json());
