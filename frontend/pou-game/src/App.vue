@@ -3,7 +3,7 @@ import { ref, onMounted } from "vue";
 import axios from "axios";
 
 const pet = ref({ hunger: 100, energy: 100, cleanliness: 100 });
-const apiUrl = "https://pou-backend.onrender.com/pet";
+const apiUrl = "https://charlie-the-creature.onrender.com/pet";
 
 // Récupérer les jauges sauvegardées
 const fetchPet = async () => {
@@ -15,12 +15,11 @@ const fetchPet = async () => {
   }
 };
 
-// Mettre à jour localement et envoyer au backend
+// Mettre à jour localement et sauvegarder dans le backend
 const interact = async (action) => {
-  pet.value[action] = Math.min(pet.value[action] + 10, 100);
-
   try {
     await axios.post(apiUrl, { action });
+    fetchPet(); // Recharge les jauges après mise à jour
   } catch (error) {
     console.error("Erreur lors de l'interaction", error);
   }
@@ -30,13 +29,13 @@ const interact = async (action) => {
 const decreaseStats = async () => {
   try {
     await axios.post(`${apiUrl}/update`);
-    fetchPet(); // Met à jour l'affichage
+    fetchPet(); // Recharge les jauges après diminution
   } catch (error) {
     console.error("Erreur lors de la diminution des jauges", error);
   }
 };
 
-// Charge les données et démarre la diminution
+// Charge les données et démarre la diminution automatique
 onMounted(() => {
   fetchPet();
   setInterval(decreaseStats, 5000);
@@ -50,9 +49,9 @@ onMounted(() => {
     <p>Énergie : {{ pet.energy }}</p>
     <p>Propreté : {{ pet.cleanliness }}</p>
 
-    <button @click="interact('hunger')">Nourrir (+10)</button>
-    <button @click="interact('energy')">Dormir (+10)</button>
-    <button @click="interact('cleanliness')">Nettoyer (+10)</button>
+    <button @click="interact('feed')">Nourrir (+10)</button>
+    <button @click="interact('sleep')">Dormir (+10)</button>
+    <button @click="interact('clean')">Nettoyer (+10)</button>
   </div>
 </template>
 
