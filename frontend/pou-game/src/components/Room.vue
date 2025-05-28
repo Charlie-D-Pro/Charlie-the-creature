@@ -17,6 +17,9 @@
       />
     </svg>
 
+    <!-- ✅ Ajout des objets ici pour qu’ils restent dans la `room` -->
+    <Objects />
+
     <Pet />
   </div>
 </template>
@@ -24,9 +27,10 @@
 <script>
 import { defineComponent } from "vue";
 import Pet from "./Pet.vue";
+import Objects from "./Objects.vue"; // ✅ Importation d'Objects.vue
 
 export default defineComponent({
-  components: { Pet },
+  components: { Pet, Objects },
 });
 </script>
 
@@ -35,6 +39,9 @@ export default defineComponent({
   position: relative;
   width: 512px;
   height: 512px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .room-bg {
@@ -44,10 +51,9 @@ export default defineComponent({
 
 .hitbox {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0; /* Ajuster si nécessaire */
+  top: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 </style>

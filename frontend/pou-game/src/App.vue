@@ -1,7 +1,8 @@
 <template>
   <div class="app-container">
     <Room />
-    <!-- ✅ Affichage de la pièce -->
+    <Objects />
+    <!-- ✅ Ajout pour afficher les objets -->
     <UIControls />
     <!-- ✅ Gestion des jauges et interactions -->
   </div>

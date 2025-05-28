@@ -9,10 +9,9 @@
 
 <script>
 import { defineComponent } from "vue";
-import PetActions from "./PetActions.vue"; // ✅ Connexion aux déplacements du chat
+import PetActions from "./PetActions.js"; // ✅ Utiliser `.js` au lieu de `.vue`
 
 export default defineComponent({
-  components: { PetActions },
   setup() {
     const triggerAction = (type) => {
       PetActions.executeAction(type);
