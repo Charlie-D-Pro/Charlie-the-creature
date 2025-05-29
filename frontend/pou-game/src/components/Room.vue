@@ -34,18 +34,32 @@ export default defineComponent({
   name: "Room",
   components: { Pet, Objects },
   setup(_, { expose }) {
-    // On crée une référence vers le composant Pet.
+    // Référence au composant Pet.
     const petComponent = ref(null);
 
-    // Cette méthode relaie l'action vers le chat.
+    // Méthode permettant de relayer une action vers Pet
     const executeActionFromOutside = (type, x, y, durationX, durationY) => {
       if (petComponent.value && petComponent.value.executeAction) {
         petComponent.value.executeAction(type, x, y, durationX, durationY);
       }
     };
 
-    // On expose la méthode pour pouvoir l'appeler depuis App.vue.
-    expose({ executeActionFromOutside });
+    // Méthode pour restaurer l'état du pet à partir des données sauvegardées
+    const restoreState = (data) => {
+      if (petComponent.value && petComponent.value.restoreState) {
+        petComponent.value.restoreState(data);
+      }
+    };
+
+    // Méthode pour obtenir la position actuelle du pet
+    const getPetPosition = () => {
+      if (petComponent.value && petComponent.value.getPosition) {
+        return petComponent.value.getPosition();
+      }
+      return { x: 0, y: 0 };
+    };
+
+    expose({ executeActionFromOutside, restoreState, getPetPosition });
 
     return { petComponent };
   },
@@ -69,7 +83,7 @@ export default defineComponent({
 
 .hitbox {
   position: absolute;
-  left: 0; /* Ajuster si nécessaire */
+  left: 0;
   top: 0;
   width: 100%;
   height: 100%;

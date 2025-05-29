@@ -13,27 +13,26 @@ import { usePetConfig } from "../composables/usePetConfig";
 export default defineComponent({
   name: "Pet",
   setup() {
-    // On récupère les données et fonctions relatives au mouvement
+    // Récupération des fonctions et données via les composables
     const movement = usePetMovement();
     const config = usePetConfig();
-    // On initialise l'animation en passant l'objet de mouvement pour partager les états
     const animation = usePetAnimation(movement);
     const { animateSprite, executeAction } = animation;
     const { scaleIdle, scaleMoving } = config;
     const { currentActionScale } = animation;
 
-    // Nouveaux flags pour le flip horizontal et vertical
+    // Flags pour gérer les flips
     const flipSpriteHorizontal = ref(false);
     const flipSpriteVertical = ref(false);
 
-    // Calcul du scale global selon l'état (action, déplacement, idle)
+    // Calcul du scale global en fonction de l'état
     const currentScale = computed(() => {
       if (movement.isPerformingAction.value) return currentActionScale.value;
       if (movement.isMoving.value) return scaleMoving.value;
       return scaleIdle.value;
     });
 
-    // Style réactif du pet, intégrant la position, l'animation et les flips
+    // Style réactif du pet
     const petStyle = computed(() => {
       let transformValue = `scale(${currentScale.value})`;
       if (flipSpriteHorizontal.value) {
@@ -57,7 +56,7 @@ export default defineComponent({
       };
     });
 
-    // On utilise le style défini dans usePetMovement
+    // Style du point de contrôle
     const controlStyle = movement.controlStyle;
 
     onMounted(() => {
@@ -66,12 +65,29 @@ export default defineComponent({
       movement.movePetRandomly();
     });
 
+    // Méthode pour restaurer l'état du pet à partir des données du backend
+    const restoreState = (data) => {
+      if (data.posX !== undefined && data.posY !== undefined) {
+        movement.petX.value = data.posX;
+        movement.petY.value = data.posY;
+      }
+      // Vous pouvez étendre cette méthode pour restaurer d'autres états si besoin.
+    };
+
+    // Méthode pour obtenir la position actuelle du pet
+    const getPosition = () => ({
+      x: movement.petX.value,
+      y: movement.petY.value,
+    });
+
     return {
       petStyle,
       controlStyle,
       executeAction,
       flipSpriteHorizontal,
       flipSpriteVertical,
+      restoreState, // Exposé pour que Room.vue puisse l'appeler
+      getPosition, // Exposé pour récupérer la position actuelle
     };
   },
 });
