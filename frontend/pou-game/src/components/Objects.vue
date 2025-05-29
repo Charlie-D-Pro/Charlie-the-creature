@@ -17,8 +17,8 @@ export default defineComponent({
     const objects = ref([
       {
         id: "foodBowl",
-        x: 200,
-        y: 275,
+        x: 400,
+        y: 320,
         width: 64,
         height: 64,
         image: "foodbowls/foodbowl_blue.png",
@@ -26,12 +26,21 @@ export default defineComponent({
       },
       {
         id: "waterBowl",
-        x: 175,
-        y: 290,
+        x: 470,
+        y: 360,
         width: 64,
         height: 64,
         image: "waterbowls/waterbowl_blue.png",
         scale: 0.6,
+      },
+      {
+        id: "catToy",
+        x: 300,
+        y: 250,
+        width: 64,
+        height: 64,
+        image: "toytrees/CatToy.gif",
+        scale: 0.7,
       },
       {
         id: "toyTree",
@@ -44,30 +53,110 @@ export default defineComponent({
       },
       {
         id: "bed",
-        x: 248,
-        y: 238,
+        x: 200,
+        y: 270,
         width: 128,
         height: 64,
         image: "beds/bed_blue.png",
         scale: 0.8,
+      },
+      {
+        id: "windowWhite1",
+        x: 77,
+        y: 167,
+        width: 64,
+        height: 64,
+        image: "windows/window_white.png",
+        scale: 1.5,
+      },
+      {
+        id: "windowWhite2",
+        x: 155,
+        y: 125,
+        width: 64,
+        height: 64,
+        image: "windows/window_white.png",
+        scale: 1.5,
+      },
+      {
+        id: "decotreeBlue",
+        x: 255,
+        y: 150,
+        width: 64,
+        height: 64,
+        image: "decotrees/decotree_blue.png",
+        scale: 1.4,
+      },
+      {
+        id: "shelfBlue",
+        x: 160,
+        y: 260,
+        width: 64,
+        height: 64,
+        image: "shelves/shelf_blue.png",
+        scale: 1,
+      },
+      {
+        id: "catfoodBig",
+        x: 165,
+        y: 270,
+        width: 64,
+        height: 64,
+        image: "catfoodbags/catfood_big.png",
+        scale: 1,
+        flipHorizontal: true,
+      },
+      {
+        id: "catPerch",
+        x: 30,
+        y: 255,
+        width: 64,
+        height: 64,
+        image: "toytrees/catPerch.png",
+        scale: 1.5,
+      },
+      {
+        id: "decoCat",
+        x: 85,
+        y: 255,
+        width: 64,
+        height: 64,
+        image: "decocats/decoCatSleep.png",
+        scale: 0.75,
+        flipHorizontal: true,
       },
     ]);
 
     const offsetX = -20;
     const offsetY = -50;
 
-    const getObjectStyle = (obj) => ({
-      position: "absolute",
-      left: `${obj.x + offsetX}px`,
-      top: `${obj.y + offsetY}px`,
-      width: `${obj.width * obj.scale}px`, // ✅ Taille ajustée avec `scale`
-      height: `${obj.height * obj.scale}px`, // ✅ Taille ajustée avec `scale`
-      backgroundImage: `url('/assets/objects/${obj.image}')`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "contain",
-      transform: `scale(${obj.scale})`, // ✅ Transformation appliquée
-      transformOrigin: "top left", // ✅ Évite les décalages lors du scale
-    });
+    const getObjectStyle = (obj) => {
+      // Définir la transformation de base avec le scale
+      let transformValue = `scale(${obj.scale})`;
+
+      // Si l'objet doit être retourné verticalement, on ajoute scaleY(-1)
+      if (obj.flipVertical) {
+        transformValue += " scaleY(-1)";
+      }
+
+      // Si l'objet doit être retourné horizontalement, on ajoute scaleX(-1)
+      if (obj.flipHorizontal) {
+        transformValue += " scaleX(-1)";
+      }
+
+      return {
+        position: "absolute",
+        left: `${obj.x + offsetX}px`,
+        top: `${obj.y + offsetY}px`,
+        width: `${obj.width * obj.scale}px`,
+        height: `${obj.height * obj.scale}px`,
+        backgroundImage: `url('/assets/objects/${obj.image}')`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain",
+        transform: transformValue,
+        transformOrigin: "top left",
+      };
+    };
 
     return { objects, getObjectStyle };
   },

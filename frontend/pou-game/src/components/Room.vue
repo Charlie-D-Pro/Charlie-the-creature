@@ -2,7 +2,7 @@
   <div class="room-container">
     <img src="/assets/room.png" alt="Room Background" class="room-bg" />
 
-    <!-- ✅ Losange SVG basé sur tes données -->
+    <!-- Hitbox SVG -->
     <svg
       class="hitbox"
       xmlns="http://www.w3.org/2000/svg"
@@ -17,20 +17,38 @@
       />
     </svg>
 
-    <!-- ✅ Ajout des objets ici pour qu’ils restent dans la `room` -->
+    <!-- Affichage des objets dans la pièce -->
     <Objects />
 
-    <Pet />
+    <!-- Le chat affiché dans la room -->
+    <Pet ref="petComponent" />
   </div>
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import Pet from "./Pet.vue";
-import Objects from "./Objects.vue"; // ✅ Importation d'Objects.vue
+import Objects from "./Objects.vue";
 
 export default defineComponent({
+  name: "Room",
   components: { Pet, Objects },
+  setup(_, { expose }) {
+    // On crée une référence vers le composant Pet.
+    const petComponent = ref(null);
+
+    // Cette méthode relaie l'action vers le chat.
+    const executeActionFromOutside = (type, x, y, durationX, durationY) => {
+      if (petComponent.value && petComponent.value.executeAction) {
+        petComponent.value.executeAction(type, x, y, durationX, durationY);
+      }
+    };
+
+    // On expose la méthode pour pouvoir l'appeler depuis App.vue.
+    expose({ executeActionFromOutside });
+
+    return { petComponent };
+  },
 });
 </script>
 

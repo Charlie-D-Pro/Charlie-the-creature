@@ -1,20 +1,22 @@
 <template>
   <div class="controls">
-    <button @click="triggerAction('hunger')">Manger</button>
-    <button @click="triggerAction('thirst')">Boire</button>
-    <button @click="triggerAction('energy')">Dormir</button>
-    <button @click="triggerAction('health')">Se soigner</button>
+    <button @click="triggerAction('eat', 340, 230)">Manger</button>
+    <button @click="triggerAction('drink', 408, 268)">Boire</button>
+    <button @click="triggerAction('sleep', 178, 195)">Dormir</button>
+    <button @click="triggerAction('play', 250, 200)">Jouer</button>
   </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-import PetActions from "./PetActions.js"; // ✅ Utiliser `.js` au lieu de `.vue`
 
 export default defineComponent({
-  setup() {
-    const triggerAction = (type) => {
-      PetActions.executeAction(type);
+  name: "UIControls",
+  emits: ["actionTriggered"],
+  setup(_, { emit }) {
+    const triggerAction = (type, x, y, durationX, durationY) => {
+      // Émet un objet avec toutes les infos nécessaires à l'action.
+      emit("actionTriggered", { type, x, y, durationX, durationY });
     };
 
     return { triggerAction };
