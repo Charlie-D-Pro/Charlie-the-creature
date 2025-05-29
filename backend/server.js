@@ -1,4 +1,4 @@
-// Charge les variables d'environnement depuis le fichier .env (utile pour le développement local)
+// Chargez les variables d'environnement depuis le fichier .env (pour le développement local)
 require("dotenv").config();
 
 const express = require("express");
@@ -23,12 +23,15 @@ app.use(bodyParser.json());
 // Récupère l'URL de connexion MongoDB depuis les variables d'environnement
 const mongoUrl = process.env.MONGO_URL;
 
+// Connexion à MongoDB avec un timeout augmenté pour donner plus de temps au cluster (30 sec)
 mongoose
-  .connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(mongoUrl, {
+    serverSelectionTimeoutMS: 30000, // 30 secondes
+  })
   .then(() => console.log("✅ Connecté à MongoDB"))
   .catch((error) => {
     console.error("❌ Erreur de connexion à MongoDB", error);
-    process.exit(1); // Quitte l'application en cas d'erreur de connexion
+    process.exit(1); // Quitte proprement en cas d'erreur de connexion
   });
 
 // Définition du modèle Pet avec les jauges et la position
@@ -43,7 +46,7 @@ const petSchema = new mongoose.Schema({
 
 const Pet = mongoose.model("Pet", petSchema);
 
-// Fonction d'initialisation du pet dans la base s'il n'existe pas
+// Initialisation du pet dans la base s'il n'existe pas encore
 const initPet = async () => {
   const existingPet = await Pet.findOne();
   if (!existingPet) {
@@ -124,7 +127,7 @@ app.post("/pet/update", async (req, res) => {
   }
 });
 
-// Démarrage du serveur sur le port défini par Render (ou 3000 par défaut)
+// Démarrage du serveur sur le port défini par Render (ou 3000 par défaut en local)
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Serveur backend démarré sur http://localhost:${PORT}`);
