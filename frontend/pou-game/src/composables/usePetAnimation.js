@@ -1,4 +1,3 @@
-// src/composables/usePetAnimation.js
 import { ref } from "vue";
 import { usePetConfig } from "./usePetConfig";
 
@@ -11,8 +10,6 @@ export function usePetAnimation(movement) {
   const {
     spriteX,
     spriteY,
-    petX,
-    petY,
     isMoving,
     isPerformingAction,
     moveTo,
@@ -128,7 +125,7 @@ export function usePetAnimation(movement) {
           }
         );
       },
-      actionSpeed // Ici, actionSpeed est correctement défini
+      actionSpeed // actionSpeed est utilisé pour contrôler la vitesse de l'action
     );
   };
 

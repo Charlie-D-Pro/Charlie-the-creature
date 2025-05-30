@@ -18,7 +18,7 @@ export function usePetConfig() {
   const randomSpeed = 50;
   const actionSpeed = 100;
 
-  // Réglages de scale pour chaque état (ils sont réactifs pour être modifiables dynamiquement)
+  // Réglages de scale pour chaque état (réactifs pour être modifiables dynamiquement)
   const scaleIdle = ref(0.7);
   const scaleMoving = ref(0.85);
   const scaleActionDefault = ref(0.85);

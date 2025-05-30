@@ -131,15 +131,15 @@ export default defineComponent({
     const offsetY = -50;
 
     const getObjectStyle = (obj) => {
-      // Définir la transformation de base avec le scale
+      // Transformation de base avec le scale
       let transformValue = `scale(${obj.scale})`;
 
-      // Si l'objet doit être retourné verticalement, on ajoute scaleY(-1)
+      // Retourne verticalement si spécifié
       if (obj.flipVertical) {
         transformValue += " scaleY(-1)";
       }
 
-      // Si l'objet doit être retourné horizontalement, on ajoute scaleX(-1)
+      // Retourne horizontalement si spécifié
       if (obj.flipHorizontal) {
         transformValue += " scaleX(-1)";
       }
@@ -171,7 +171,6 @@ export default defineComponent({
   width: 100%;
   height: 100%;
 }
-
 .object {
   position: absolute;
 }

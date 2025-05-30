@@ -35,12 +35,8 @@ export default defineComponent({
     // Style réactif du pet
     const petStyle = computed(() => {
       let transformValue = `scale(${currentScale.value})`;
-      if (flipSpriteHorizontal.value) {
-        transformValue += " scaleX(-1)";
-      }
-      if (flipSpriteVertical.value) {
-        transformValue += " scaleY(-1)";
-      }
+      if (flipSpriteHorizontal.value) transformValue += " scaleX(-1)";
+      if (flipSpriteVertical.value) transformValue += " scaleY(-1)";
       return {
         position: "absolute",
         left: `${movement.petX.value}px`,
@@ -56,7 +52,7 @@ export default defineComponent({
       };
     });
 
-    // Style du point de contrôle
+    // Style du point de contrôle (pour debug ou repère visuel)
     const controlStyle = movement.controlStyle;
 
     onMounted(() => {

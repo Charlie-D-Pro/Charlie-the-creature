@@ -1,4 +1,3 @@
-// src/composables/usePetMovement.js
 import { ref, computed } from "vue";
 import { usePetConfig } from "./usePetConfig";
 
@@ -51,17 +50,18 @@ export function usePetMovement() {
     return inside;
   };
 
-  // Fonctions de déplacement
+  // Fonction de déplacement vers une position cible
   let moveToTimeoutId = null;
   const moveTo = (x, y, callback, speed = 200) => {
     const dx = x - petX.value;
     const dy = y - petY.value;
     const distance = Math.hypot(dx, dy);
     const duration = Math.max((distance / speed) * 1000, 400);
-    // On met à jour la durée pour la transition (en secondes)
+    // Mise à jour de la durée pour la transition (en secondes)
     moveDurationSeconds.value = duration / 1000;
     isMoving.value = true;
-    spriteY.value = 320; // Ligne d'animation de marche
+    // Ici, 320 est utilisé pour la ligne d'animation de marche (peut être remplacé par une constante si besoin)
+    spriteY.value = 320;
     petX.value = x;
     petY.value = y;
     moveToTimeoutId = setTimeout(() => {

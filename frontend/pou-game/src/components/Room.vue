@@ -19,7 +19,6 @@
 
     <!-- Affichage des objets dans la pièce -->
     <Objects />
-
     <!-- Le chat affiché dans la room -->
     <Pet ref="petComponent" />
   </div>
@@ -34,24 +33,20 @@ export default defineComponent({
   name: "Room",
   components: { Pet, Objects },
   setup(_, { expose }) {
-    // Référence au composant Pet.
     const petComponent = ref(null);
 
-    // Méthode permettant de relayer une action vers Pet
     const executeActionFromOutside = (type, x, y, durationX, durationY) => {
       if (petComponent.value && petComponent.value.executeAction) {
         petComponent.value.executeAction(type, x, y, durationX, durationY);
       }
     };
 
-    // Méthode pour restaurer l'état du pet à partir des données sauvegardées
     const restoreState = (data) => {
       if (petComponent.value && petComponent.value.restoreState) {
         petComponent.value.restoreState(data);
       }
     };
 
-    // Méthode pour obtenir la position actuelle du pet
     const getPetPosition = () => {
       if (petComponent.value && petComponent.value.getPosition) {
         return petComponent.value.getPosition();
@@ -60,7 +55,6 @@ export default defineComponent({
     };
 
     expose({ executeActionFromOutside, restoreState, getPetPosition });
-
     return { petComponent };
   },
 });
@@ -71,9 +65,7 @@ export default defineComponent({
   position: relative;
   width: 512px;
   height: 512px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  /* Avec App.vue qui centre le contenu, on n’a plus besoin de left/top/transform ici */
 }
 
 .room-bg {

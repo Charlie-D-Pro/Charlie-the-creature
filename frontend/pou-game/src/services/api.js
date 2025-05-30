@@ -2,23 +2,40 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:3000", // Assurez-vous que l'URL et le port correspondent à votre serveur Express.
-  headers: {
-    "Content-Type": "application/json",
-  },
+  baseURL: "http://localhost:3000", // Vérifiez que cette URL correspond à votre backend local
+  headers: { "Content-Type": "application/json" },
+  timeout: 5000,
 });
 
 export default {
-  // Récupère l'état complet du pet (jauges et position)
-  getState() {
-    return apiClient.get("/pet");
+  async getState() {
+    try {
+      const response = await apiClient.get("/pet");
+      return response.data;
+    } catch (error) {
+      console.error("Erreur API - getState :", error);
+      return null;
+    }
   },
-  // Met à jour le pet en fonction d'une action et/ou d'une position nouvelle
-  updateState(data) {
-    return apiClient.post("/pet", data);
+
+  async updateState(data) {
+    try {
+      const response = await apiClient.post("/pet", data);
+      return response.data;
+    } catch (error) {
+      console.error("Erreur API - updateState :", error);
+      return null;
+    }
   },
-  // Diminue automatiquement les jauges (simule l'usure dans le temps)
-  updateGauges() {
-    return apiClient.post("/pet/update");
+
+  // Ne jamais appeler updateGauges() depuis le client
+  async updateGauges() {
+    try {
+      const response = await apiClient.post("/pet/update");
+      return response.data;
+    } catch (error) {
+      console.error("Erreur API - updateGauges :", error);
+      return null;
+    }
   },
 };
