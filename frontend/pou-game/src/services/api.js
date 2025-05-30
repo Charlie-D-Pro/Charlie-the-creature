@@ -1,8 +1,8 @@
 // src/services/api.js
 import axios from "axios";
 
-// Utilise la variable d'environnement VUE_APP_API_URL si définie, sinon l'URL locale par défaut
-const baseURL = process.env.VUE_APP_API_URL || "http://localhost:3000";
+// Utilise la variable d'environnement VITE_API_URL si définie, sinon l'URL locale par défaut
+const baseURL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 const apiClient = axios.create({
   baseURL,
