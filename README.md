@@ -1,182 +1,185 @@
-# 🚀 Documentation - Personnage Animé Interactive
+# Charlie-the-creature
 
-Ce projet est une application Vue.js interactive qui met en scène un personnage animé évoluant dans une pièce.  
-La logique a été entièrement refactorisée pour séparer le frontend (affichage, animations, interactions) du backend (gestion de l'état, persistance via MongoDB).  
-Le projet utilise désormais Node.js avec Express pour le backend et Vue 3 pour le frontend.
+**Charlie-the-creature** est une application interactive qui associe un backend Node.js/Express avec MongoDB et un frontend développé en Vue.js avec Vite. Ce projet simule un pet virtuel vivant dans un décor animé, permettant diverses interactions telles que manger, boire, dormir et jouer, avec une synchronisation en temps réel de ses états.
 
 ---
 
-## 📂 Structure des Fichiers
+## Table des matières
 
-Voici l'organisation complète du projet :
-
-📂 **Projet (dossier racine)**  
-├── 📁 **backend/**  
-│ └── 📝 `server.js`  
-│ _Contient le serveur Express connecté à MongoDB (via Mongoose) et gère les endpoints pour récupérer et mettre à jour l'état du personnage._  
-├── 📁 **src/**  
-│ ├── 📁 `assets/`  
-│ │ └── _Images et spritesheets (ex. `room.png`, `cat_black.png`, `decoCatSleep.png`, etc.)_  
-│ ├── 📁 `components/`  
-│ │ ├── 📝 `Pet.vue`  
-│ │ _Affiche le personnage animé (gestion des animations, mouvement et flips)._  
-│ │ ├── 📝 `Objects.vue`  
-│ │ _Affiche les objets décoratifs présents dans la pièce (positionnement, scale, flip)._  
-│ │ ├── 📝 `Room.vue`  
-│ │ _Vue principale qui affiche le background, la hitbox (SVG) et intègre `Pet.vue` et `Objects.vue`._  
-│ │ └── 📝 `UIControls.vue`  
-│ │ _Interface utilisateur pour déclencher des actions (manger, boire, dormir, jouer)._  
-│ ├── 📁 `composables/`  
-│ │ ├── 📝 `usePetConfig.js`  
-│ │ _Centralise la configuration globale (zones interdites, vitesses, scales, animation)._  
-│ │ ├── 📝 `usePetMovement.js`  
-│ │ _Gère les déplacements du personnage, la gestion de la hitbox et le mouvement aléatoire._  
-│ │ └── 📝 `usePetAnimation.js`  
-│ │ _Supervise les animations du personnage (idle, déplacement et actions en deux phases)._  
-│ └── 📝 `App.vue`  
-│ _Composant principal du frontend, qui intègre `Room.vue` et `UIControls.vue`._  
-├── 📝 `package.json`  
-└── ... (autres fichiers de configuration)
+- [Aperçu](#aperçu)
+- [Fonctionnalités](#fonctionnalités)
+- [Architecture--Structure](#architecture--structure)
+- [Technologies utilisées](#technologies-utilisées)
+- [Installation](#installation)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [Utilisation](#utilisation)
+- [Points d'amélioration](#points-damélioration)
+- [Contribution](#contribution)
+- [Licence](#licence)
 
 ---
 
-## 📜 Description des Composants
+## Aperçu
 
-### **App.vue**
-
-💡 **Fonction** :  
-Le point d'entrée de l'application frontend.  
-Intègre la vue globale via `Room.vue` et gère la transmission des actions depuis `UIControls.vue`.
-
-📌 **À modifier** :
-
-- Ajuster le style global.
-- Ajouter d’éventuelles interactions globales.
+**Charlie-the-creature** offre une expérience immersive où un pet virtuel évolue dans une salle interactive. Le backend gère la persistance et la logique de décrémentation des jauges (faim, soif, énergie, bonheur) à l'aide de MongoDB, tandis que le frontend en Vue.js avec Vite présente une interface animée et réactive pour observer et interagir avec le pet.
 
 ---
 
-### **Pet.vue**
+## Fonctionnalités
 
-💡 **Fonction** :  
-Affiche le personnage animé et gère ses animations, ses déplacements et ses transformations (scale, flip).
+- **Backend (Node.js + Express & MongoDB) :**
 
-📌 **À modifier** :
+  - Connexion à une base MongoDB pour stocker l'état du pet.
+  - Endpoint `GET /pet` qui renvoie l'état actuel du pet avec une décrémentation basée sur le temps écoulé.
+  - Endpoint `POST /pet` permettant de mettre à jour des valeurs suite à une action (manger, boire, dormir, jouer).
+  - Initialisation automatique du pet dans la base si aucun enregistrement n'est trouvé.
 
-- Ajouter de nouveaux états ou animations.
-- Modifier le rendu visuel et affiner les transitions.
-
----
-
-### **Objects.vue**
-
-💡 **Fonction** :  
-Affiche les objets décoratifs dans la pièce.  
-Chaque objet est défini par ses propriétés (position, dimensions, image, scale, flip).
-
-📌 **À modifier** :
-
-- Ajouter ou modifier des objets.
-- Intégrer des animations pour certains objets (ex. via GIF ou spritesheet).
+- **Frontend (Vue.js + Vite) :**
+  - Interface utilisateur réactive basée sur Vue 3 (Composition API).
+  - Composants interactifs pour afficher la salle, le pet, les objets décoratifs et les jauges d'état.
+  - Logique d'animation et de déplacement du pet via des composables spécialisés (gestion des mouvements, des animations et de la configuration).
+  - Contrôle des actions via des boutons dédiés dans le composant **UIControls.vue**.
+  - Synchronisation d'état avec le backend par appels API via Axios.
 
 ---
 
-### **Room.vue**
+## Architecture--Structure
 
-💡 **Fonction** :  
-Vue principale de la pièce.  
-Affiche le background (`room.png`), la hitbox (SVG) et regroupe `Pet.vue` et `Objects.vue`.
+Le projet est organisé en deux parties principales :
 
-📌 **À modifier** :
+**Backend :**
 
-- Personnaliser l’agencement de la pièce.
-- Modifier la hitbox ou ajouter de nouveaux éléments d’environnement.
+- `server.js`  
+  Configure l'API avec Express, gère la connexion à MongoDB via Mongoose, définit le schéma du pet et implémente la logique de décrémentation en temps réel.
 
----
+**Frontend (Vue.js) :**
 
-### **UIControls.vue**
+- **Composants principaux** :
 
-💡 **Fonction** :  
-Interface utilisateur pour déclencher des actions sur le personnage (manger, boire, dormir, jouer).
+  - `App.vue` : Intègre les composants **Room.vue** (affichage de l'environnement), **Gauges.vue** (indicateurs d'état) et **UIControls.vue** (boutons d'action).
+  - `Room.vue` : Affiche le décor (image de fond, hitbox SVG, objets décoratifs) et intègre le composant **Pet.vue**.
+  - `Pet.vue` : Gère l'affichage, les animations et les déplacements du pet.
+  - `Gauges.vue` : Affiche les jauges de faim, soif, énergie et bonheur avec des barres de progression.
+  - `UIControls.vue` : Propose des boutons pour déclencher des actions (manger, boire, dormir, jouer).
+  - `Objects.vue` : Affiche les objets décoratifs dans la salle.
 
-📌 **À modifier** :
-
-- Personnaliser l’apparence et le style des boutons.
-- Ajouter de nouvelles actions ou modifier la configuration des actions émises.
-
----
-
-## 💾 Les Composables
-
-Pour une meilleure modularité, la logique métier est extraite dans des fichiers dédiés :
-
-### **usePetConfig.js**
-
-💡 **Fonction** :  
-Centralise toute la configuration globale du personnage et de son environnement.
-
-📌 **Points Clés** :
-
-- Zones interdites utilisées pour la gestion de la hitbox.
-- Paramètres généraux (`spriteWidth`, `idleRow`).
-- Vitesses de déplacement (`randomSpeed`, `actionSpeed`) et réglages de scale (`scaleIdle`, `scaleMoving`, `scaleActionDefault`).
-- Configuration détaillée des animations pour chaque action (eat, drink, sleep, play).
+- **Composables et services** :
+  - `src/services/api.js` : Centralise les appels API vers le backend.
+  - `usePetState.js` : Gère l'état réactif du pet, la logique de décrémentation locale et le déclenchement des actions.
+  - `usePetMovement.js` : Coordonne le déplacement du pet, vérifie les zones interdites et met à jour sa position.
+  - `usePetAnimation.js` : Ordonne les animations du pet, notamment lors des actions en deux phases.
+  - `usePetConfig.js` : Fournit les configurations et paramètres fixes (vitesse, zones interdites, réglages d'animation).
 
 ---
 
-### **usePetMovement.js**
+## Technologies utilisées
 
-💡 **Fonction** :  
-Gère les déplacements et la position du personnage.
+- **Backend :**
 
-📌 **Points Clés** :
+  - Node.js, Express, Mongoose, MongoDB, dotenv, cors
 
-- États réactifs de position (`petX`, `petY`) et d’animation (`spriteX`, `spriteY`).
-- Fonction `moveTo(x, y, callback, speed)` qui déplace le personnage avec une transition CSS fluide.
-- Logique de déplacement aléatoire avec prise en charge de la hitbox et des zones interdites.
-- Expose un style calculé pour le point de contrôle (pour le débogage).
+- **Frontend :**
+  - Vue.js 3 (Composition API), Vite, Axios, CSS (SFC)
 
 ---
 
-### **usePetAnimation.js**
+## Installation
 
-💡 **Fonction** :  
-Supervise toutes les animations du personnage, que ce soit en état idle, lors de déplacements ou lors d’actions spécifiques.
+### Backend
 
-📌 **Points Clés** :
+1. **Prérequis :**
 
-- `animateSprite()` pour animer le personnage en state idle ou en mouvement.
-- `animateActionRow()` qui gère la séquence d'animation en deux phases pour les actions.
-- `executeAction(type, targetX, targetY)` pour déclencher une action spécifique et appliquer dynamiquement un scale différent.
+   - Node.js (version 14 ou supérieure)
+   - Une instance de MongoDB (locale ou distante)
+
+2. **Configuration :**
+   Créez un fichier `.env` à la racine du projet backend avec au moins : MONGO_URL=mongodb://localhost:27017/charlieDB PORT=3000
+
+3. **Installation :**
+
+```bash
+cd backend
+npm install
+```
+
+4. **Démarrage :**
+
+```bash
+npm start
+```
+
+Le serveur démarre sur le port défini (par défaut 3000).
+
+### Frontend
+
+1. **Prérequis :**
+
+   - Node.js, npm
+
+2. **Installation :**
+
+```bash
+cd frontend/pou-game
+npm install
+```
+
+3. **Configuration :**
+
+   Dans un fichier .env à la racine du projet frontend, définissez :
+
+   VITE_API_URL=http://localhost:3000
+
+   Cela permet de pointer le client vers le backend.
+
+4. **Démarrage :**
+
+```bash
+npm run dev
+```
 
 ---
 
-## 🚀 Backend - server.js
+**Bloc 2/2 :**
 
-Le backend est développé avec Node.js et Express, et utilise MongoDB (via Mongoose) pour la persistance de l’état du personnage.
+````markdown
+---
+## Utilisation
 
-### **Points Clés :**
+- Accédez à l'interface via votre navigateur.
+- Observez le pet évoluer dans une salle décorée, avec des jauges affichant ses états (faim, soif, énergie, bonheur).
+- Utilisez les boutons du composant **UIControls.vue** pour déclencher des actions (manger, boire, dormir, jouer) qui modifient les jauges et animent le pet.
+- Le pet se déplace aléatoirement dans la salle en respectant des zones interdites, et son état est régulièrement synchronisé avec le backend.
+---
 
-- **Connexion à MongoDB :**  
-  Le serveur se connecte à MongoDB via une URL sécurisée fournie dans la variable d'environnement `MONGO_URL`.
+## Points d'amélioration
 
-- **Modèle Pet :**  
-  Défini via Mongoose pour stocker les jauges du personnage (hunger, energy, cleanliness).  
-  Un initialiseur vérifie et crée un document initial si aucun n’existe.
-
-- **Endpoints :**
-
-  - `GET /pet` : Récupère l'état actuel du personnage.
-  - `POST /pet` : Met à jour les jauges du personnage selon l’action (ex. feed, sleep, clean).
-  - `POST /pet/update` : Diminue automatiquement les jauges (simulation d'une usure).
-
-- **Sécurité et CORS :**  
-  Le backend utilise le middleware `cors` pour autoriser les requêtes cross-origin.  
-  Les requêtes JSON sont traitées via `body-parser`.
-
-📌 **À modifier** :
-
-- Étendre ou ajouter des endpoints pour de nouvelles fonctionnalités.
-- Intégrer une gestion d’authentification si nécessaire.
-- Optimiser la persistance en fonction de l’évolution des besoins.
+- **Synchronisation des états :**  
+  La décrémentation des jauges est appliquée à la fois côté serveur et côté client, ce qui peut entraîner des divergences. Une centralisation de la logique pourrait simplifier la gestion.
+- **Nettoyage des intervalles :**  
+  Assurez-vous que tous les `setInterval` et autres timers sont correctement arrêtés lors du démontage des composants pour éviter des fuites de mémoire.
+- **Optimisation des appels API :**  
+  Lors de l'exécution des actions, le nombre d'appels API peut être élevé. Envisagez d'utiliser un mécanisme de debounce ou de regrouper les mises à jour pour réduire la charge.
+- **Gestion des valeurs hardcodées :**  
+  Pour faciliter la maintenance, certaines valeurs (positions par défaut, offsets, etc.) pourraient être centralisées dans un fichier de configuration.
 
 ---
+
+## Contribution
+
+Les contributions à **Charlie-the-creature** sont les bienvenues !
+
+1. **Forkez le dépôt**
+2. **Créez une branche pour votre fonctionnalité :**
+
+   ```bash
+   git checkout -b feature/ma-fonctionnalite
+
+   ```
+
+3. **Commitez vos modifications avec des messages clairs.**
+4. **Poussez votre branche et ouvrez une Pull Request pour soumettre vos modifications.**
+
+**Licence**
+Ce projet est distribué sous la licence MIT.
+````
