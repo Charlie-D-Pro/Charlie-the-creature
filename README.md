@@ -77,9 +77,9 @@ charlie-the-creature/
 
 ## 🖼️ Screenshots
 
-| ![Charlie Room](documents\Screenshot_65.png) | ![Pet Gauges](documents\Screenshot_67.png) |
-| :------------------------------------------: | :----------------------------------------: |
-|            _Charlie's cozy room_             |          _Track Charlie's needs_           |
+| ![Charlie Room](/documents/Screenshot_65.png) | ![Pet Gauges](/documents/Screenshot_67.png) |
+| :-------------------------------------------: | :-----------------------------------------: |
+|             _Charlie's cozy room_             |           _Track Charlie's needs_           |
 
 ---
 
