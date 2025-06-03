@@ -98,7 +98,6 @@ export default defineComponent({
   position: absolute;
   width: 5px;
   height: 5px;
-  background-color: #00000000;
   border-radius: 50%;
 }
 </style>
