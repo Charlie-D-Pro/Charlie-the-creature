@@ -10,7 +10,6 @@
     >
       <polygon
         points="257,197 493,323 258,443 20,323"
-        fill="red"
         opacity="0.3"
         stroke="black"
         stroke-width="2"

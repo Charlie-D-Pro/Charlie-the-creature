@@ -1,174 +1,208 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>resume</title>
-  <style>
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>resume</title>
+    <style>
       html {
-        background-color: white;
+        color: #1a1a1a;
+        background-color: #fdfdfd;
       }
       body {
+        margin: 0 auto;
+        max-width: 36em;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        hyphens: auto;
+        overflow-wrap: break-word;
+        text-rendering: optimizeLegibility;
+        font-kerning: normal;
+      }
+      @media (max-width: 600px) {
+        body {
+          font-size: 0.9em;
+          padding: 12px;
+        }
+        h1 {
+          font-size: 1.8em;
+        }
+      }
+      @media print {
+        html {
+          background-color: white;
+        }
+        body {
+          background-color: transparent;
+          color: black;
+          font-size: 12pt;
+        }
+        p,
+        h2,
+        h3 {
+          orphans: 3;
+          widows: 3;
+        }
+        h2,
+        h3,
+        h4 {
+          page-break-after: avoid;
+        }
+      }
+      p {
+        margin: 1em 0;
+      }
+      a {
+        color: #1a1a1a;
+      }
+      a:visited {
+        color: #1a1a1a;
+      }
+      img {
+        max-width: 100%;
+      }
+      svg {
+        height: auto;
+        max-width: 100%;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: 1.4em;
+      }
+      h5,
+      h6 {
+        font-size: 1em;
+        font-style: italic;
+      }
+      h6 {
+        font-weight: normal;
+      }
+      ol,
+      ul {
+        padding-left: 1.7em;
+        margin-top: 1em;
+      }
+      li > ol,
+      li > ul {
+        margin-top: 0;
+      }
+      blockquote {
+        margin: 1em 0 1em 1.7em;
+        padding-left: 1em;
+        border-left: 2px solid #e6e6e6;
+        color: #606060;
+      }
+      code {
+        font-family: Menlo, Monaco, Consolas, "Lucida Console", monospace;
+        font-size: 85%;
+        margin: 0;
+        hyphens: manual;
+      }
+      pre {
+        margin: 1em 0;
+        overflow: auto;
+      }
+      pre code {
+        padding: 0;
+        overflow: visible;
+        overflow-wrap: normal;
+      }
+      .sourceCode {
         background-color: transparent;
-        color: black;
-        font-size: 12pt;
+        overflow: visible;
       }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
+      hr {
+        border: none;
+        border-top: 1px solid #1a1a1a;
+        height: 1px;
+        margin: 1em 0;
       }
-      h2, h3, h4 {
-        page-break-after: avoid;
+      table {
+        margin: 1em 0;
+        border-collapse: collapse;
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+        font-variant-numeric: lining-nums tabular-nums;
       }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
+      table caption {
+        margin-bottom: 0.75em;
+      }
+      tbody {
+        margin-top: 0.5em;
+        border-top: 1px solid #1a1a1a;
+        border-bottom: 1px solid #1a1a1a;
+      }
+      th {
+        border-top: 1px solid #1a1a1a;
+        padding: 0.25em 0.5em 0.25em 0.5em;
+      }
+      td {
+        padding: 0.125em 0.5em 0.25em 0.5em;
+      }
+      header {
+        margin-bottom: 4em;
+        text-align: center;
+      }
+      #TOC li {
+        list-style: none;
+      }
+      #TOC ul {
+        padding-left: 1.3em;
+      }
+      #TOC > ul {
+        padding-left: 0;
+      }
+      #TOC a:not(:hover) {
+        text-decoration: none;
+      }
+      code {
+        white-space: pre-wrap;
+      }
+      span.smallcaps {
+        font-variant: small-caps;
+      }
+      div.columns {
+        display: flex;
+        gap: min(4vw, 1.5em);
+      }
+      div.column {
+        flex: auto;
+        overflow-x: auto;
+      }
+      div.hanging-indent {
+        margin-left: 1.5em;
+        text-indent: -1.5em;
+      }
+      /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-  </style>
-  <style type="text/css">
-  /*
+      ul.task-list[class] {
+        list-style: none;
+      }
+      ul.task-list li input[type="checkbox"] {
+        font-size: inherit;
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1.6em;
+        vertical-align: middle;
+      }
+      .display.math {
+        display: block;
+        text-align: center;
+        margin: 0.5rem auto;
+      }
+    </style>
+    <style type="text/css">
+      /*
    * Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
    *
    * CSS for making a resume with pandoc. Inspired by moderncv.
@@ -177,437 +211,601 @@
    * https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
    */
 
-  /* Whole document */
-  body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      background: #FFFFFF;
-      padding: 10px 10px 10px 10px;
-  }
+      /* Whole document */
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        max-width: 800px;
+        margin: auto;
+        background: #ffffff;
+        padding: 10px 10px 10px 10px;
+      }
 
-  /* Title of the resume */
-  h1 {
-      font-size: 55px;
-      color: #757575;
-      text-align:center;
-      margin-bottom:15px;
-  }
-  /* h1:hover { */
-  /*     background-color: #757575; */
-  /*     color: #FFFFFF; */
-  /*     text-shadow: 1px 1px 1px #333; */
-  /* } */
+      /* Title of the resume */
+      h1 {
+        font-size: 55px;
+        color: #757575;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      /* h1:hover { */
+      /*     background-color: #757575; */
+      /*     color: #FFFFFF; */
+      /*     text-shadow: 1px 1px 1px #333; */
+      /* } */
 
-  /* Titles of categories */
-  h2 {
-      /* This is called "sectioncolor" in the ConTeXt stylesheet. */
-      color: #397249;
-  }
-  /* There is a bar just before each category */
-  h2:before {
-      content: "";
-      display: inline-block;
-      margin-right:1%;
-      width: 16%;
-      height: 10px;
-      /* This is called "rulecolor" in the ConTeXt stylesheet. */
-      background-color: #9CB770;
-  }
-  /* h2:hover { */
-  /*     background-color: #397249; */
-  /*     color: #FFFFFF; */
-  /*     text-shadow: 1px 1px 1px #333; */
-  /* } */
+      /* Titles of categories */
+      h2 {
+        /* This is called "sectioncolor" in the ConTeXt stylesheet. */
+        color: #397249;
+      }
+      /* There is a bar just before each category */
+      h2:before {
+        content: "";
+        display: inline-block;
+        margin-right: 1%;
+        width: 16%;
+        height: 10px;
+        /* This is called "rulecolor" in the ConTeXt stylesheet. */
+        background-color: #9cb770;
+      }
+      /* h2:hover { */
+      /*     background-color: #397249; */
+      /*     color: #FFFFFF; */
+      /*     text-shadow: 1px 1px 1px #333; */
+      /* } */
 
-  /* Definitions */
-  dt {
-      float: left;
-      clear: left;
-      width: 17%;
-      font-weight: bold;
-  }
-  dd {
-      margin-left: 17%;
-      margin-bottom:7px;
-  }
-  p {
-      margin-top:0;
-      margin-bottom:7px;
-  }
+      /* Definitions */
+      dt {
+        float: left;
+        clear: left;
+        width: 17%;
+        font-weight: bold;
+      }
+      dd {
+        margin-left: 17%;
+        margin-bottom: 7px;
+      }
+      p {
+        margin-top: 0;
+        margin-bottom: 7px;
+      }
 
-  /* Blockquotes */
-  blockquote {
-      text-align: center
-  }
+      /* Blockquotes */
+      blockquote {
+        text-align: center;
+      }
 
-  /* Links */
-  a {
-      text-decoration: none;
-      color: #397249;
-  }
-  a:hover, a:active {
-      background-color: #397249;
-      color: #FFFFFF;
-      text-decoration: none;
-      text-shadow: 1px 1px 1px #333;
-  }
+      /* Links */
+      a {
+        text-decoration: none;
+        color: #397249;
+      }
+      a:hover,
+      a:active {
+        background-color: #397249;
+        color: #ffffff;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #333;
+      }
 
-  /* Horizontal separators */
-  hr {
-      color: #A6A6A6;
-  }
+      /* Horizontal separators */
+      hr {
+        color: #a6a6a6;
+      }
 
-  table {
-      width: 100%;
-  }
-  </style>
-</head>
-<body>
-<header id="title-block-header">
-<h1 class="title">Cahier des Charges</h1>
-<p class="date">03 Juin 2025</p>
-</header>
-<h1 id="charlie-the-creature-cahier-des-charges">Charlie the Creature –
-Cahier des Charges</h1>
-<blockquote>
-<p>Ce document détaillé spécifie l’ensemble des aspects du projet web
-full-stack interactif dans lequel les utilisateurs interagissent avec un
-pet virtuel au sein d’une pièce animée.</p>
-</blockquote>
-<hr />
-<h2 id="table-des-matières">Table des Matières</h2>
-<ul>
-<li><a href="#1-définition-des-parties">1. Définition des Parties</a>
-<ul>
-<li><a href="#client">Client</a></li>
-<li><a href="#prestataire">Prestataire</a></li>
-</ul></li>
-<li><a href="#2-contexte-du-projet">2. Contexte du Projet</a>
-<ul>
-<li><a href="#21-contexte-initial">2.1 Contexte Initial</a></li>
-<li><a href="#22-contenu-fournis">2.2 Contenu Fournis</a></li>
-</ul></li>
-<li><a href="#3-présentation-du-projet">3. Présentation du
-Projet</a></li>
-<li><a href="#4-fonctionnalités-clés-technologies-et-hébergement">4.
-Fonctionnalités Clés, Technologies et Hébergement</a>
-<ul>
-<li><a href="#41-fonctionnalités-clés">4.1 Fonctionnalités Clés</a>
-<ul>
-<li><a href="#backend">Backend</a></li>
-<li><a href="#frontend">Frontend</a></li>
-</ul></li>
-<li><a href="#42-technologies-et-hébergement">4.2 Technologies et
-Hébergement</a></li>
-</ul></li>
-<li><a href="#5-phases-et-planification-du-projet">5. Phases et
-Planification du Projet</a>
-<ul>
-<li><a
-href="#milestone-1---initialisation-du-backend-et-du-frontend">Milestone
-1 – Initialisation</a></li>
-<li><a
-href="#milestone-2---conception-du-design-et-intégration-des-assets">Milestone
-2 – Conception du Design</a></li>
-<li><a href="#milestone-3---déplacement-et-animations-du-pet">Milestone
-3 – Déplacement et Animations</a></li>
-<li><a
-href="#milestone-4---hébergement-et-connexion-backend-frontend">Milestone
-4 – Hébergement et Connexion</a></li>
-<li><a
-href="#milestone-5---résolution-des-bugs-et-améliorations">Milestone 5 –
-Résolution des Bugs</a></li>
-</ul></li>
-<li><a href="#6-évolutions-futures">6. Évolutions Futures</a></li>
-<li><a href="#7-budget--informations-complémentaires">7. Budget &amp;
-Informations Complémentaires</a></li>
-<li><a href="#8-encodage-des-données">8. Encodage des Données</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<hr />
-<h2 id="définition-des-parties">1. Définition des Parties</h2>
-<h3 id="client">Client</h3>
-<ul>
-<li><strong>Nom :</strong> Pascal Lacroix</li>
-<li><strong>Rôle :</strong> Représentant de l’EAFC Fléron, chargé du
-cours de projet web dynamique pour la section Web Developer.</li>
-<li><strong>Coordonnées :</strong> webiepscf@gmail.com</li>
-</ul>
-<h3 id="prestataire">Prestataire</h3>
-<ul>
-<li><strong>Nom :</strong> Charles Decheneux</li>
-<li><strong>Rôle :</strong> Étudiant en 2ème année Web Developer à
-l’EAFC Fléron, en charge de la réalisation du projet.</li>
-<li><strong>Coordonnées :</strong> charles.d.pro@hotmail.com</li>
-</ul>
-<hr />
-<h2 id="contexte-du-projet">2. Contexte du Projet</h2>
-<h3 id="contexte-initial">2.1 Contexte Initial</h3>
-<p>Le projet est réalisé dans le cadre du cours de projet web dynamique
-de la section Web Developer à l’EAFC Fléron.<br />
-Pour valider ses acquis, le client impose des critères d’évaluation
-issus du dossier pédagogique de l’unité de formation.<br />
-L’objectif est de livrer une application web dynamique fonctionnelle, en
-utilisant des technologies modernes pour démontrer la compétence du
-prestataire.</p>
-<h3 id="contenu-fournis">2.2 Contenu Fournis</h3>
-<ul>
-<li><strong>Par le Client :</strong><br />
-Aucune fourniture directe de contenu. Toutefois, des maquettes issues de
-la promotion Web Designer (2021-2022) de l’EAFC Fléron servent de
-base.</li>
-<li><strong>Par le Prestataire :</strong><br />
-Le prestataire fournit l’intégralité du contenu nécessaire (code source,
-assets graphiques, tutoriels d’installation).<br />
-Le dépôt GitHub est accessible à <a
-href="https://github.com/Charlie-D-Pro/Charlie-the-creature"
-target="_blank">https://github.com/Charlie-D-Pro/Charlie-the-creature</a>.<br />
-Certains éléments graphiques ont été achetés (ex. Pack “Cat Retro” sur
-<a href="https://toffeecraft.itch.io/cat-retro"
-target="_blank">toffeecraft.itch.io</a>) avec une licence autorisant
-leur utilisation et modification.</li>
-</ul>
-<hr />
-<h2 id="présentation-du-projet">3. Présentation du Projet</h2>
-<p><strong>Charlie the Creature</strong> est une application web
-interactive conçue pour démontrer les compétences Full-Stack du
-prestataire.<br />
-L’application met en scène un pet virtuel, ici un petit chat, évoluant
-dans sa chambre animée.<br />
-Les utilisateurs interagissent avec lui pour satisfaire ses besoins
-(nourriture, hydratation, divertissement, repos).</p>
-<p><img src="Screenshot_65.png"
-alt="Aperçu de l’application – Chambre animée" /><br />
-<em>Le pet évolue dans sa chambre interactive.</em></p>
-<p><img src="Screenshot_67.png" alt="Aperçu des interactions" /><br />
-<em>Les besoins du pet sont symbolisés par des jauges pour la faim, la
-soif, l’énergie et le bonheur.</em></p>
-<p><img src="Screenshot_69.png" alt="Exemple d’interaction" /><br />
-<em>Les actions utilisateurs permettent de rétablir ces jauges à travers
-des commandes simples.</em></p>
-<hr />
-<h2 id="fonctionnalités-clés-technologies-et-hébergement">4.
-Fonctionnalités Clés, Technologies et Hébergement</h2>
-<h3 id="fonctionnalités-clés">4.1 Fonctionnalités Clés</h3>
-<h4 id="backend">Backend</h4>
-<ul>
-<li><strong>Persistance des Données :</strong><br />
-Utilisation de <strong>MongoDB</strong> avec <strong>Mongoose</strong>
-pour stocker l’état du pet, avec une initialisation automatique en
-l’absence de données.</li>
-<li><strong>API Endpoints :</strong>
-<ul>
-<li><code>GET /pet</code> : Retourne l’état actuel du pet, avec une
-décrémentation progressive des jauges (faim, soif, énergie,
-bonheur).</li>
-<li><code>POST /pet</code> : Met à jour l’état du pet en fonction des
-actions (manger, boire, jouer, dormir).</li>
-</ul></li>
-</ul>
-<h4 id="frontend">Frontend</h4>
-<ul>
-<li><strong>Interface Utilisateur :</strong><br />
-Développée en <strong>Vue.js 3</strong> et optimisée avec
-<strong>Vite</strong>, l’interface se compose de :
-<ul>
-<li><strong>Room.vue :</strong> Affichage de l’environnement animé avec
-un décor interactif.</li>
-<li><strong>Pet.vue :</strong> Animation et gestion des déplacements du
-pet virtuel.</li>
-<li><strong>Gauges.vue :</strong> Affichage des indicateurs visuels pour
-la faim, la soif, l’énergie et le bonheur.</li>
-<li><strong>UIControls.vue :</strong> Boutons permettant d’interagir
-avec le pet.</li>
-<li><strong>Objects.vue :</strong> Rendu des éléments décoratifs
-complémentaires.</li>
-</ul></li>
-<li><strong>Interactivité &amp; Synchronisation :</strong><br />
-Des <strong>composables personnalisés</strong> (ex. :
-<code>usePetState.js</code>, <code>usePetMovement.js</code>,
-<code>usePetAnimation.js</code>, <code>usePetConfig.js</code>) associés
-à <strong>Axios</strong> assurent la mise à jour en temps réel de l’état
-du pet.</li>
-</ul>
-<h3 id="technologies-et-hébergement">4.2 Technologies et
-Hébergement</h3>
-<ul>
-<li><strong>Backend :</strong>
-<ul>
-<li><strong>Technologies :</strong> Node.js, Express, MongoDB,
-Mongoose.</li>
-<li><strong>Déploiement :</strong>
-<ul>
-<li>API déployée sur <strong>Render</strong>.</li>
-<li>Base de données hébergée sur <strong>MongoDB Atlas</strong>.</li>
-</ul></li>
-</ul></li>
-<li><strong>Frontend :</strong>
-<ul>
-<li><strong>Technologies :</strong> Vue.js 3, Vite, Axios, CSS (pour
-animations et transitions).</li>
-<li><strong>Déploiement :</strong> Déployé sur
-<strong>Vercel</strong>.</li>
-</ul></li>
-</ul>
-<hr />
-<h2 id="phases-et-planification-du-projet">5. Phases et Planification du
-Projet</h2>
-<p>Ce projet a été réalisé sur une période de 4 jours, se décomposant en
-les étapes suivantes :</p>
-<h3 id="milestone-1-initialisation-du-backend-et-du-frontend">Milestone
-1 – Initialisation du Backend et du Frontend</h3>
-<p><strong>Objectif :</strong> Préparer l’environnement de
-développement<br />
-<strong>Issues associées :</strong></p>
-<ul>
-<li><strong>[#1] Initialisation du backend :</strong>
-<ul>
-<li>Création du dossier <code>backend</code></li>
-<li>Installation de Node.js et Express (<code>npm init</code>,
-<code>npm install express</code>)</li>
-<li>Mise en place de la structure de l’API</li>
-</ul></li>
-<li><strong>[#2] Initialisation du frontend :</strong>
-<ul>
-<li>Création du dossier <code>frontend</code></li>
-<li>Installation de Vue.js avec Vite
-(<code>npm create vite@latest</code>)</li>
-<li>Configuration de la structure de base des composants</li>
-</ul></li>
-</ul>
-<h3
-id="milestone-2-conception-du-design-et-intégration-des-assets">Milestone
-2 – Conception du Design et Intégration des Assets</h3>
-<p><strong>Objectif :</strong> Mettre en place l’interface
-utilisateur<br />
-<strong>Issues associées :</strong></p>
-<ul>
-<li><strong>[#3] Création du design UI :</strong>
-<ul>
-<li>Mise en place du style graphique et définition du thème</li>
-<li>Définition des animations et interactions clés</li>
-</ul></li>
-<li><strong>[#4] Configuration de la pièce et des éléments :</strong>
-<ul>
-<li>Intégration du pack d’assets</li>
-<li>Placement des meubles et objets interactifs</li>
-<li>Création des hitboxes et des zones d’interaction</li>
-</ul></li>
-</ul>
-<h3 id="milestone-3-déplacement-et-animations-du-pet">Milestone 3 –
-Déplacement et Animations du Pet</h3>
-<p><strong>Objectif :</strong> Permettre à l’animal de bouger et
-d’interagir<br />
-<strong>Issues associées :</strong></p>
-<ul>
-<li><strong>[#5] Développement du système de déplacement :</strong>
-<ul>
-<li>Création des animations de mouvement</li>
-<li>Gestion du comportement du pet en fonction de l’environnement</li>
-</ul></li>
-<li><strong>[#6] Intégration des boutons de contrôle :</strong>
-<ul>
-<li>Ajout de 4 boutons dédiés aux actions du pet</li>
-<li>Synchronisation des animations avec les interactions
-utilisateur</li>
-</ul></li>
-</ul>
-<h3 id="milestone-4-hébergement-et-connexion-backend-frontend">Milestone
-4 – Hébergement et Connexion Backend-Frontend</h3>
-<p><strong>Objectif :</strong> Rendre le projet accessible en
-ligne<br />
-<strong>Issues associées :</strong></p>
-<ul>
-<li><strong>[#7] Hébergement du frontend :</strong>
-<ul>
-<li>Déploiement sur <strong>Vercel</strong></li>
-<li>Configuration du build et des variables d’environnement</li>
-</ul></li>
-<li><strong>[#8] Mise en place de la base de données :</strong>
-<ul>
-<li>Création de la base de données MongoDB</li>
-<li>Définition du modèle <code>Pet</code> et mise en place de la
-persistance des données</li>
-</ul></li>
-<li><strong>[#9] Hébergement du backend :</strong>
-<ul>
-<li>Déploiement de l’API sur <strong>Render</strong></li>
-<li>Mise en place de la connexion entre MongoDB et Express</li>
-<li>Vérification des appels API (GET &amp; POST)</li>
-</ul></li>
-</ul>
-<h3 id="milestone-5-résolution-des-bugs-et-améliorations">Milestone 5 –
-Résolution des Bugs et Améliorations</h3>
-<p><strong>Objectif :</strong> Assurer un fonctionnement stable du
-projet<br />
-<strong>Issues associées :</strong></p>
-<ul>
-<li><strong>[#10] Correction des bugs liés à la mise en ligne :</strong>
-<ul>
-<li>Résolution des erreurs de déploiement</li>
-<li>Vérification du bon fonctionnement en production</li>
-</ul></li>
-<li><strong>[#11] Implémentation des jauges dynamiques :</strong>
-<ul>
-<li>Décrémentation automatique des jauges</li>
-<li>Synchronisation des jauges avec les actions du pet</li>
-</ul></li>
-<li><strong>[#12] Finalisation de l’expérience utilisateur :</strong>
-<ul>
-<li>Amélioration de la fluidité des animations</li>
-<li>Optimisation des performances</li>
-</ul></li>
-</ul>
-<hr />
-<h2 id="évolutions-futures">6. Évolutions Futures</h2>
-<ul>
-<li><strong>Communication en Temps Réel :</strong> Intégration de
-WebSocket pour une synchronisation améliorée.</li>
-<li><strong>Nouvelles Fonctionnalités :</strong>
-<ul>
-<li>Visualisation des émotions du pet</li>
-<li>Options de personnalisation (apparence du pet, de la pièce, des
-meubles)</li>
-<li>Ajout d’un système de connexion (identifiant et mot de passe)</li>
-</ul></li>
-<li><strong>Interface &amp; Optimisation Mobile :</strong> Amélioration
-de l’UX et réactivité sur dispositifs mobiles.</li>
-<li><strong>Extension pour TFE :</strong> Enrichissement fonctionnel et
-graphique pour une version finale.</li>
-</ul>
-<hr />
-<h2 id="budget-informations-complémentaires">7. Budget &amp;
-Informations Complémentaires</h2>
-<ul>
-<li><strong>Budget :</strong>
-<ul>
-<li>Les services de l’application sont fournis gracieusement.</li>
-<li>La main d’œuvre et l’investissement du prestataire ne sont pas
-facturés.</li>
-<li>Certains assets ont été achetés pour un montant total de 3,32€.</li>
-</ul></li>
-<li><strong>Hébergement :</strong>
-<ul>
-<li>Utilisation de plans gratuits/éducatifs sur <strong>Render</strong>
-(backend) et <strong>Vercel</strong> (frontend).</li>
-</ul></li>
-</ul>
-<hr />
-<h2 id="encodage-des-données">8. Encodage des Données</h2>
-<p>Les données relatives à l’état du pet sont encodées en JSON dans
-<strong>MongoDB</strong>.<br />
-Un schéma défini via <strong>Mongoose</strong> garantit une gestion
-structurée et cohérente des informations.</p>
-<hr />
-<h2 id="contact">Contact</h2>
-<ul>
-<li><strong>Client :</strong> Pascal Lacroix – <a
-href="mailto:webiepscf@gmail.com">webiepscf@gmail.com</a></li>
-<li><strong>Prestataire :</strong> Charles Decheneux – <a
-href="mailto:charles.d.pro@hotmail.com">charles.d.pro@hotmail.com</a></li>
-</ul>
-<hr />
-<p><em>Fin du Cahier des Charges.</em></p>
-</body>
+      table {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="title-block-header">
+      <h1 class="title">Cahier des Charges</h1>
+      <p class="date">03 Juin 2025</p>
+    </header>
+    <h1 id="charlie-the-creature-cahier-des-charges">
+      Charlie the Creature – Cahier des Charges
+    </h1>
+    <blockquote>
+      <p>
+        Ce document détaillé spécifie l’ensemble des aspects du projet web
+        full-stack interactif dans lequel les utilisateurs interagissent avec un
+        pet virtuel au sein d’une pièce animée.
+      </p>
+    </blockquote>
+    <hr />
+    <h2 id="table-des-matières">Table des Matières</h2>
+    <ul>
+      <li>
+        <a href="#1-définition-des-parties">1. Définition des Parties</a>
+        <ul>
+          <li><a href="#client">Client</a></li>
+          <li><a href="#prestataire">Prestataire</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#2-contexte-du-projet">2. Contexte du Projet</a>
+        <ul>
+          <li><a href="#21-contexte-initial">2.1 Contexte Initial</a></li>
+          <li><a href="#22-contenu-fournis">2.2 Contenu Fournis</a></li>
+        </ul>
+      </li>
+      <li><a href="#3-présentation-du-projet">3. Présentation du Projet</a></li>
+      <li>
+        <a href="#4-fonctionnalités-clés-technologies-et-hébergement"
+          >4. Fonctionnalités Clés, Technologies et Hébergement</a
+        >
+        <ul>
+          <li>
+            <a href="#41-fonctionnalités-clés">4.1 Fonctionnalités Clés</a>
+            <ul>
+              <li><a href="#backend">Backend</a></li>
+              <li><a href="#frontend">Frontend</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#42-technologies-et-hébergement"
+              >4.2 Technologies et Hébergement</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#5-phases-et-planification-du-projet"
+          >5. Phases et Planification du Projet</a
+        >
+        <ul>
+          <li>
+            <a href="#milestone-1---initialisation-du-backend-et-du-frontend"
+              >Milestone 1 – Initialisation</a
+            >
+          </li>
+          <li>
+            <a
+              href="#milestone-2---conception-du-design-et-intégration-des-assets"
+              >Milestone 2 – Conception du Design</a
+            >
+          </li>
+          <li>
+            <a href="#milestone-3---déplacement-et-animations-du-pet"
+              >Milestone 3 – Déplacement et Animations</a
+            >
+          </li>
+          <li>
+            <a href="#milestone-4---hébergement-et-connexion-backend-frontend"
+              >Milestone 4 – Hébergement et Connexion</a
+            >
+          </li>
+          <li>
+            <a href="#milestone-5---résolution-des-bugs-et-améliorations"
+              >Milestone 5 – Résolution des Bugs</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li><a href="#6-évolutions-futures">6. Évolutions Futures</a></li>
+      <li>
+        <a href="#7-budget--informations-complémentaires"
+          >7. Budget &amp; Informations Complémentaires</a
+        >
+      </li>
+      <li><a href="#8-encodage-des-données">8. Encodage des Données</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <hr />
+    <h2 id="définition-des-parties">1. Définition des Parties</h2>
+    <h3 id="client">Client</h3>
+    <ul>
+      <li><strong>Nom :</strong> Pascal Lacroix</li>
+      <li>
+        <strong>Rôle :</strong> Représentant de l’EAFC Fléron, chargé du cours
+        de projet web dynamique pour la section Web Developer.
+      </li>
+      <li><strong>Coordonnées :</strong> webiepscf@gmail.com</li>
+    </ul>
+    <h3 id="prestataire">Prestataire</h3>
+    <ul>
+      <li><strong>Nom :</strong> Charles Decheneux</li>
+      <li>
+        <strong>Rôle :</strong> Étudiant en 2ème année Web Developer à l’EAFC
+        Fléron, en charge de la réalisation du projet.
+      </li>
+      <li><strong>Coordonnées :</strong> charles.d.pro@hotmail.com</li>
+    </ul>
+    <hr />
+    <h2 id="contexte-du-projet">2. Contexte du Projet</h2>
+    <h3 id="contexte-initial">2.1 Contexte Initial</h3>
+    <p>
+      Le projet est réalisé dans le cadre du cours de projet web dynamique de la
+      section Web Developer à l’EAFC Fléron.<br />
+      Pour valider ses acquis, le client impose des critères d’évaluation issus
+      du dossier pédagogique de l’unité de formation.<br />
+      L’objectif est de livrer une application web dynamique fonctionnelle, en
+      utilisant des technologies modernes pour démontrer la compétence du
+      prestataire.
+    </p>
+    <h3 id="contenu-fournis">2.2 Contenu Fournis</h3>
+    <ul>
+      <li>
+        <strong>Par le Client :</strong><br />
+        Aucune fourniture directe de contenu. Toutefois, des maquettes issues de
+        la promotion Web Designer (2021-2022) de l’EAFC Fléron servent de base.
+      </li>
+      <li>
+        <strong>Par le Prestataire :</strong><br />
+        Le prestataire fournit l’intégralité du contenu nécessaire (code source,
+        assets graphiques, tutoriels d’installation).<br />
+        Le dépôt GitHub est accessible à
+        <a
+          href="https://github.com/Charlie-D-Pro/Charlie-the-creature"
+          target="_blank"
+          >https://github.com/Charlie-D-Pro/Charlie-the-creature</a
+        >.<br />
+        Certains éléments graphiques ont été achetés (ex. Pack “Cat Retro” sur
+        <a href="https://toffeecraft.itch.io/cat-retro" target="_blank"
+          >toffeecraft.itch.io</a
+        >) avec une licence autorisant leur utilisation et modification.
+      </li>
+    </ul>
+    <hr />
+    <h2 id="présentation-du-projet">3. Présentation du Projet</h2>
+    <p>
+      <strong>Charlie the Creature</strong> est une application web interactive
+      conçue pour démontrer les compétences Full-Stack du prestataire.<br />
+      L’application met en scène un pet virtuel, ici un petit chat, évoluant
+      dans sa chambre animée.<br />
+      Les utilisateurs interagissent avec lui pour satisfaire ses besoins
+      (nourriture, hydratation, divertissement, repos).
+    </p>
+    <p>
+      <img
+        src="Screenshot_65.png"
+        alt="Aperçu de l’application – Chambre animée"
+      /><br />
+      <em>Le pet évolue dans sa chambre interactive.</em>
+    </p>
+    <p>
+      <img src="Screenshot_67.png" alt="Aperçu des interactions" /><br />
+      <em
+        >Les besoins du pet sont symbolisés par des jauges pour la faim, la
+        soif, l’énergie et le bonheur.</em
+      >
+    </p>
+    <p>
+      <img src="Screenshot_69.png" alt="Exemple d’interaction" /><br />
+      <em
+        >Les actions utilisateurs permettent de rétablir ces jauges à travers
+        des commandes simples.</em
+      >
+    </p>
+    <hr />
+    <h2 id="fonctionnalités-clés-technologies-et-hébergement">
+      4. Fonctionnalités Clés, Technologies et Hébergement
+    </h2>
+    <h3 id="fonctionnalités-clés">4.1 Fonctionnalités Clés</h3>
+    <h4 id="backend">Backend</h4>
+    <ul>
+      <li>
+        <strong>Persistance des Données :</strong><br />
+        Utilisation de <strong>MongoDB</strong> avec
+        <strong>Mongoose</strong> pour stocker l’état du pet, avec une
+        initialisation automatique en l’absence de données.
+      </li>
+      <li>
+        <strong>API Endpoints :</strong>
+        <ul>
+          <li>
+            <code>GET /pet</code> : Retourne l’état actuel du pet, avec une
+            décrémentation progressive des jauges (faim, soif, énergie,
+            bonheur).
+          </li>
+          <li>
+            <code>POST /pet</code> : Met à jour l’état du pet en fonction des
+            actions (manger, boire, jouer, dormir).
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h4 id="frontend">Frontend</h4>
+    <ul>
+      <li>
+        <strong>Interface Utilisateur :</strong><br />
+        Développée en <strong>Vue.js 3</strong> et optimisée avec
+        <strong>Vite</strong>, l’interface se compose de :
+        <ul>
+          <li>
+            <strong>Room.vue :</strong> Affichage de l’environnement animé avec
+            un décor interactif.
+          </li>
+          <li>
+            <strong>Pet.vue :</strong> Animation et gestion des déplacements du
+            pet virtuel.
+          </li>
+          <li>
+            <strong>Gauges.vue :</strong> Affichage des indicateurs visuels pour
+            la faim, la soif, l’énergie et le bonheur.
+          </li>
+          <li>
+            <strong>UIControls.vue :</strong> Boutons permettant d’interagir
+            avec le pet.
+          </li>
+          <li>
+            <strong>Objects.vue :</strong> Rendu des éléments décoratifs
+            complémentaires.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Interactivité &amp; Synchronisation :</strong><br />
+        Des <strong>composables personnalisés</strong> (ex. :
+        <code>usePetState.js</code>, <code>usePetMovement.js</code>,
+        <code>usePetAnimation.js</code>, <code>usePetConfig.js</code>) associés
+        à <strong>Axios</strong> assurent la mise à jour en temps réel de l’état
+        du pet.
+      </li>
+    </ul>
+    <h3 id="technologies-et-hébergement">4.2 Technologies et Hébergement</h3>
+    <ul>
+      <li>
+        <strong>Backend :</strong>
+        <ul>
+          <li>
+            <strong>Technologies :</strong> Node.js, Express, MongoDB, Mongoose.
+          </li>
+          <li>
+            <strong>Déploiement :</strong>
+            <ul>
+              <li>API déployée sur <strong>Render</strong>.</li>
+              <li>
+                Base de données hébergée sur <strong>MongoDB Atlas</strong>.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Frontend :</strong>
+        <ul>
+          <li>
+            <strong>Technologies :</strong> Vue.js 3, Vite, Axios, CSS (pour
+            animations et transitions).
+          </li>
+          <li>
+            <strong>Déploiement :</strong> Déployé sur <strong>Vercel</strong>.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+    <h2 id="phases-et-planification-du-projet">
+      5. Phases et Planification du Projet
+    </h2>
+    <p>
+      Ce projet a été réalisé sur une période de 4 jours, se décomposant en les
+      étapes suivantes :
+    </p>
+    <h3 id="milestone-1-initialisation-du-backend-et-du-frontend">
+      Milestone 1 – Initialisation du Backend et du Frontend
+    </h3>
+    <p>
+      <strong>Objectif :</strong> Préparer l’environnement de développement<br />
+      <strong>Issues associées :</strong>
+    </p>
+    <ul>
+      <li>
+        <strong>[#1] Initialisation du backend :</strong>
+        <ul>
+          <li>Création du dossier <code>backend</code></li>
+          <li>
+            Installation de Node.js et Express (<code>npm init</code>,
+            <code>npm install express</code>)
+          </li>
+          <li>Mise en place de la structure de l’API</li>
+        </ul>
+      </li>
+      <li>
+        <strong>[#2] Initialisation du frontend :</strong>
+        <ul>
+          <li>Création du dossier <code>frontend</code></li>
+          <li>
+            Installation de Vue.js avec Vite (<code>npm create vite@latest</code
+            >)
+          </li>
+          <li>Configuration de la structure de base des composants</li>
+        </ul>
+      </li>
+    </ul>
+    <h3 id="milestone-2-conception-du-design-et-intégration-des-assets">
+      Milestone 2 – Conception du Design et Intégration des Assets
+    </h3>
+    <p>
+      <strong>Objectif :</strong> Mettre en place l’interface utilisateur<br />
+      <strong>Issues associées :</strong>
+    </p>
+    <ul>
+      <li>
+        <strong>[#3] Création du design UI :</strong>
+        <ul>
+          <li>Mise en place du style graphique et définition du thème</li>
+          <li>Définition des animations et interactions clés</li>
+        </ul>
+      </li>
+      <li>
+        <strong>[#4] Configuration de la pièce et des éléments :</strong>
+        <ul>
+          <li>Intégration du pack d’assets</li>
+          <li>Placement des meubles et objets interactifs</li>
+          <li>Création des hitboxes et des zones d’interaction</li>
+        </ul>
+      </li>
+    </ul>
+    <h3 id="milestone-3-déplacement-et-animations-du-pet">
+      Milestone 3 – Déplacement et Animations du Pet
+    </h3>
+    <p>
+      <strong>Objectif :</strong> Permettre à l’animal de bouger et
+      d’interagir<br />
+      <strong>Issues associées :</strong>
+    </p>
+    <ul>
+      <li>
+        <strong>[#5] Développement du système de déplacement :</strong>
+        <ul>
+          <li>Création des animations de mouvement</li>
+          <li>Gestion du comportement du pet en fonction de l’environnement</li>
+        </ul>
+      </li>
+      <li>
+        <strong>[#6] Intégration des boutons de contrôle :</strong>
+        <ul>
+          <li>Ajout de 4 boutons dédiés aux actions du pet</li>
+          <li>
+            Synchronisation des animations avec les interactions utilisateur
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h3 id="milestone-4-hébergement-et-connexion-backend-frontend">
+      Milestone 4 – Hébergement et Connexion Backend-Frontend
+    </h3>
+    <p>
+      <strong>Objectif :</strong> Rendre le projet accessible en ligne<br />
+      <strong>Issues associées :</strong>
+    </p>
+    <ul>
+      <li>
+        <strong>[#7] Hébergement du frontend :</strong>
+        <ul>
+          <li>Déploiement sur <strong>Vercel</strong></li>
+          <li>Configuration du build et des variables d’environnement</li>
+        </ul>
+      </li>
+      <li>
+        <strong>[#8] Mise en place de la base de données :</strong>
+        <ul>
+          <li>Création de la base de données MongoDB</li>
+          <li>
+            Définition du modèle <code>Pet</code> et mise en place de la
+            persistance des données
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>[#9] Hébergement du backend :</strong>
+        <ul>
+          <li>Déploiement de l’API sur <strong>Render</strong></li>
+          <li>Mise en place de la connexion entre MongoDB et Express</li>
+          <li>Vérification des appels API (GET &amp; POST)</li>
+        </ul>
+      </li>
+    </ul>
+    <h3 id="milestone-5-résolution-des-bugs-et-améliorations">
+      Milestone 5 – Résolution des Bugs et Améliorations
+    </h3>
+    <p>
+      <strong>Objectif :</strong> Assurer un fonctionnement stable du projet<br />
+      <strong>Issues associées :</strong>
+    </p>
+    <ul>
+      <li>
+        <strong>[#10] Correction des bugs liés à la mise en ligne :</strong>
+        <ul>
+          <li>Résolution des erreurs de déploiement</li>
+          <li>Vérification du bon fonctionnement en production</li>
+        </ul>
+      </li>
+      <li>
+        <strong>[#11] Implémentation des jauges dynamiques :</strong>
+        <ul>
+          <li>Décrémentation automatique des jauges</li>
+          <li>Synchronisation des jauges avec les actions du pet</li>
+        </ul>
+      </li>
+      <li>
+        <strong>[#12] Finalisation de l’expérience utilisateur :</strong>
+        <ul>
+          <li>Amélioration de la fluidité des animations</li>
+          <li>Optimisation des performances</li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+    <h2 id="évolutions-futures">6. Évolutions Futures</h2>
+    <ul>
+      <li>
+        <strong>Communication en Temps Réel :</strong> Intégration de WebSocket
+        pour une synchronisation améliorée.
+      </li>
+      <li>
+        <strong>Nouvelles Fonctionnalités :</strong>
+        <ul>
+          <li>Visualisation des émotions du pet</li>
+          <li>
+            Options de personnalisation (apparence du pet, de la pièce, des
+            meubles)
+          </li>
+          <li>Ajout d’un système de connexion (identifiant et mot de passe)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Interface &amp; Optimisation Mobile :</strong> Amélioration de
+        l’UX et réactivité sur dispositifs mobiles.
+      </li>
+      <li>
+        <strong>Extension pour TFE :</strong> Enrichissement fonctionnel et
+        graphique pour une version finale.
+      </li>
+    </ul>
+    <hr />
+    <h2 id="budget-informations-complémentaires">
+      7. Budget &amp; Informations Complémentaires
+    </h2>
+    <ul>
+      <li>
+        <strong>Budget :</strong>
+        <ul>
+          <li>Les services de l’application sont fournis gracieusement.</li>
+          <li>
+            La main d’œuvre et l’investissement du prestataire ne sont pas
+            facturés.
+          </li>
+          <li>
+            Certains assets ont été achetés pour un montant total de 3,32€.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Hébergement :</strong>
+        <ul>
+          <li>
+            Utilisation de plans gratuits/éducatifs sur
+            <strong>Render</strong> (backend) et
+            <strong>Vercel</strong> (frontend).
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+    <h2 id="encodage-des-données">8. Encodage des Données</h2>
+    <p>
+      Les données relatives à l’état du pet sont encodées en JSON dans
+      <strong>MongoDB</strong>.<br />
+      Un schéma défini via <strong>Mongoose</strong> garantit une gestion
+      structurée et cohérente des informations.
+    </p>
+    <hr />
+    <h2 id="contact">Contact</h2>
+    <ul>
+      <li>
+        <strong>Client :</strong> Pascal Lacroix –
+        <a href="mailto:webiepscf@gmail.com">webiepscf@gmail.com</a>
+      </li>
+      <li>
+        <strong>Prestataire :</strong> Charles Decheneux –
+        <a href="mailto:charles.d.pro@hotmail.com">charles.d.pro@hotmail.com</a>
+      </li>
+    </ul>
+    <hr />
+    <p><em>Fin du Cahier des Charges.</em></p>
+  </body>
 </html>
