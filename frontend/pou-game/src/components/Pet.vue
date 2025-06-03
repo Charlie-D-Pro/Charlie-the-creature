@@ -94,11 +94,12 @@ export default defineComponent({
   position: absolute;
   transform: scale(1);
 }
-/*.control-point {
+.control-point {
+  display: none;
   position: absolute;
   width: 5px;
   height: 5px;
   background-color: green;
   border-radius: 50%;
-}*/
+}
 </style>
